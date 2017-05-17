@@ -1,0 +1,11 @@
+package com.walgreens.pznoffer.sample;
+
+import java.lang.Number;
+
+rule "third_rule"
+	dialect "mvel"
+	when
+		SamplePojo( thirdBool == true )
+	then
+		System.out.println("Third rule");
+end

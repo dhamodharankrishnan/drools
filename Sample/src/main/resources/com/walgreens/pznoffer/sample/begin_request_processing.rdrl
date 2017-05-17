@@ -1,0 +1,13 @@
+package com.walgreens.pznoffer.sample;
+
+import java.lang.Number;
+
+rule "begin_request_processing" extends "super_rule"
+	dialect "mvel"
+	when
+		$sampleRequest : SampleRequest( )
+		($samplePojo : SamplePojo( ) from $sampleRequest.offerList)
+	then
+		System.out.println("Iterate using from");
+		$samplePojo.setSubBool( true );
+end

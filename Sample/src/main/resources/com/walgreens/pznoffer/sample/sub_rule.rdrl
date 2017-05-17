@@ -1,0 +1,11 @@
+package com.walgreens.pznoffer.sample;
+
+import java.lang.Number;
+
+rule "sub_rule" extends "third_rule"
+	dialect "mvel"
+	when
+		SamplePojo( subBool == true )
+	then
+		System.out.println("Sub is also true");
+end
